@@ -11,24 +11,24 @@
       "id": 2
     },
     {
-      "title": "My second stream",
-      "description": "Description for second stream",
-      "id": 3
-    },
-    {
       "title": "third stream",
       "description": "desc",
-      "id": 4
+      "id": 3
     },
     {
       "title": "ff",
       "description": "aomh",
       "userId": null,
+      "id": 4
+    },
+    {
+      "title": "valid title",
+      "description": "valid desc",
       "id": 5
     },
     {
-      "title": "fifth",
-      "description": "desc",
+      "title": "programmatic navigation",
+      "description": "this change is made by patch request!",
       "userId": "109198912064283324919",
       "id": 6
     }
