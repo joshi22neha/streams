@@ -2,9 +2,8 @@ import React from "react";
 import ReactDom from "react-dom";
 
 const Modal = (props) => {
-  //stopPropagation makes sure that parent event doesn't bubble up
   return ReactDom.createPortal(
-    <div onClick={props.onDismiss} >
+    <div onClick={props.onDismiss}>
       <div className="ui dimmer modals visible active">
         <div
           onClick={(e) => e.stopPropagation()}

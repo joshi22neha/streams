@@ -1,6 +1,5 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
-//reduxForm is similar to connect
 
 class StreamForm extends React.Component {
   renderError({ error, touched }) {
@@ -17,8 +16,6 @@ class StreamForm extends React.Component {
       formProps.meta.error && formProps.meta.touched ? "error" : ""
     }`;
     return (
-      //<input onChange={formProps.input.onChange} value={formProps.input.value} /> OR YOU CAN WRITE:
-
       <div className={className}>
         <label>{formProps.label}</label>
         <input {...formProps.input} autoComplete="off" />
@@ -28,13 +25,10 @@ class StreamForm extends React.Component {
   };
 
   onSubmit = (formValues) => {
-    //creating a network request on the api running on loacalhost:3001
     this.props.onSubmit(formValues);
   };
   render() {
-    //console.log(this.props);
     return (
-      // since we are using redux form- this.props.handleSubmit- callback function that is provided to our componenet by redux form
       <form
         className="ui form error"
         onSubmit={this.props.handleSubmit(this.onSubmit)}
@@ -65,6 +59,5 @@ const validate = (formValues) => {
 
 export default reduxForm({
   form: "StreamForm",
-  //validate: validate OR YOU CAN WRITE
   validate,
 })(StreamForm);

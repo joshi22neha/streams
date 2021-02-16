@@ -42,7 +42,6 @@ class StreamList extends React.Component {
   }
 
   renderCreate() {
-    //if(this.props.currentUserId) OR
     if (this.props.isSignedIn) {
       return (
         <div style={{ textAlign: "right" }}>
@@ -57,7 +56,9 @@ class StreamList extends React.Component {
   render() {
     return (
       <div>
-        <h2>Streams</h2>
+        <h2 className="ui header">
+          <div className="content">Streams</div>
+        </h2>
         <div className="ui celled list">{this.renderList()}</div>
         {this.renderCreate()}
       </div>
@@ -70,7 +71,7 @@ const mapStateToProps = (state) => {
     streams: Object.values(state.streams),
     currentUserId: state.auth.userId,
     isSignedIn: state.auth.isSignedIn,
-  }; // object.values()returns the value of the object into an array
+  };
 };
 
 export default connect(mapStateToProps, { fetchStreams })(StreamList);

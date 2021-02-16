@@ -5,14 +5,14 @@ import StreamForm from "./StreamForm";
 
 class StreamCreate extends React.Component {
   onSubmit = (formValues) => {
-    //creating a network request on the api running on loacalhost:3001
     this.props.createStream(formValues);
   };
   render() {
-    //console.log(this.props);
     return (
       <div>
-        <h3>Create a Stream</h3>
+        <h2 className="ui header">
+          <div className="content">Create a Stream</div>
+        </h2>
         <StreamForm onSubmit={this.onSubmit} />
       </div>
     );

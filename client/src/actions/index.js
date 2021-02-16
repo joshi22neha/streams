@@ -1,5 +1,5 @@
 import streams from "../apis/streams";
-import history from '../history';
+import history from "../history";
 
 export const signIn = (userId) => {
   return {
@@ -22,8 +22,8 @@ export const createStream = (formValues) => {
       type: "CREATE_STREAM",
       payload: response.data,
     });
-    //programmatic navigation to get the user back to the root route
-    history.push('/');
+
+    history.push("/");
   };
 };
 
@@ -38,14 +38,13 @@ export const fetchStream = (id) => async (dispatch) => {
 };
 
 export const editStream = (id, formValues) => async (dispatch) => {
-  //we will use patch instead of put, as put updates all properties of request but patch updates some of them
   const response = await streams.patch(`/streams/${id}`, formValues);
   dispatch({ type: "EDIT_STREAM", payload: response.data });
-  history.push('/');
+  history.push("/");
 };
 
 export const deleteStream = (id) => async (dispatch) => {
   await streams.delete(`/streams/${id}`);
   dispatch({ type: "DELETE_STREAM", payload: id });
-  history.push('/');
+  history.push("/");
 };
